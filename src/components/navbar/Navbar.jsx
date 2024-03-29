@@ -8,7 +8,7 @@ function Navbar({ navOpen, setNavOpen }) {
 
   useEffect(() => {
     const handleScroll = () => {
-      const isScrolled = window.scrollY > 0;
+      const isScrolled = window.scrollY > 200;
       setScrollBackground(isScrolled);
     };
 
@@ -21,7 +21,7 @@ function Navbar({ navOpen, setNavOpen }) {
   
 
   return (
-    <nav id='Home' className={`w-full bg-black transition-all ease-linear duration-300 ${
+    <nav id='Home' className={`w-full bg-black transition-all ease-linear duration-500 ${
       scrollBackground ? 'bg-opacity-50 backdrop-filter backdrop-blur sticky top-0  z-40' : ''}`}>
       <motion.div
         initial={{
@@ -32,7 +32,7 @@ function Navbar({ navOpen, setNavOpen }) {
           translateY: 0
         }}
         className={`container bg-[#1f 1f1f] flex justify-between items-center  px-2 py-5 mx-auto relative z-40`}>
-        <p className='my-0 mx-5 z-[400] text-[deepskyblue] text-[30px] font-bold'><a href="">Galal</a></p>
+        <p className='my-0 mx-5 z-[400] text-[deepskyblue] text-[35px] font-bold'><a href="">Galal</a></p>
         <div className={`inline-flex justify-center items-center flex-col md:hidden gap-1
              cursor-pointer rounded-full bg-transparent absolute right-5 z-[400]`} onClick={() => setNavOpen(!navOpen)}>
           <motion.div
