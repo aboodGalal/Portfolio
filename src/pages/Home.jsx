@@ -5,6 +5,7 @@ import { faFacebookF, faGithub, faLinkedinIn } from '@fortawesome/free-brands-sv
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCamera } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
+import img from '../assets/Picsart_24-02-01_23-19-57-785.jpg'
 
 function Home() {
 
@@ -76,7 +77,7 @@ function Home() {
             >
               <img
                 className="rounded-[20px] w-full h-full"
-                src="src\assets\Picsart_24-02-01_23-19-57-785.jpg"
+                src={img}
                 alt=""
               />
             </motion.div>

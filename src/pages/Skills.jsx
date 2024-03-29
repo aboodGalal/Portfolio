@@ -1,15 +1,22 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import Icon from '../components/Icon';
+import html from '../assets/html-1.svg'
+import css from '../assets/file-type-css-icon-1806x2048-r5fwjl3p.png'
+import react from '../assets/React-icon.svg.png'
+import js from '../assets/javascript-js-icon-2048x2048-nyxvtvk0.png'
+import tailwind from '../assets/tailwind-css-icon-2048x1229-u8dzt4uh.png'
+import framer_motion from '../assets/framer-motion.svg'
+import redux_icon from '../assets/redux-icon.webp'
 
 function Skills() {
-  const Icons = [{ link: 'src/assets/html-1.svg', name: 'html', },
-  { link: 'src/assets/file-type-css-icon-1806x2048-r5fwjl3p.png', name: 'css' },
-  { link: 'src/assets/React-icon.svg.png', name: 'react' },
-  { link: 'src/assets/javascript-js-icon-2048x2048-nyxvtvk0.png', name: 'javascript' },
-  { link: 'src/assets/tailwind-css-icon-2048x1229-u8dzt4uh.png', name: 'tailwind' },
-  { link: 'src/assets/framer-motion.svg', name: 'farmer motion' },
-  { link: 'src/assets/redux-icon.webp', name: 'redux-toolkit' }]
+  const Icons = [{ link: html, name: 'html', },
+  { link: css, name: 'css' },
+  { link: react, name: 'react' },
+  { link: js, name: 'javascript' },
+  { link: tailwind, name: 'tailwind' },
+  { link: framer_motion, name: 'farmer motion' },
+  { link: redux_icon, name: 'redux-toolkit' }]
 
 
 
