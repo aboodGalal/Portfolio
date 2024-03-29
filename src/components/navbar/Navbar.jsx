@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import Sidebar from '../sidebar/Sidebar'
-import Links from '../Links/Links'
+import Links from '../links/Links'
 import { useEffect, useState } from 'react';
 
 function Navbar({ navOpen, setNavOpen }) {
