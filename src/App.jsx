@@ -51,7 +51,7 @@ function App() {
   return (
     <div className={`relative`}>
       <Navbar navOpen={navOpen} setNavOpen={setNavOpen}/>
-      <div className={`transition-all ease-linear  duration-100 relative ${navOpen ? 'blur' : ''}`}>
+      <div className={`transition-all ease-linear  duration-100 relative ${navOpen ? '' : ''}`}>
       <div className="upper-bg"></div>
       <Home navOpen={navOpen} setNavOpen={setNavOpen}/>
         <Skills />

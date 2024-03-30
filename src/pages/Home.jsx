@@ -34,7 +34,7 @@ function Home() {
         <Particless />
       </div>
       <div
-        className={`container mx-auto flex flex-col-reverse md:flex-row-reverse gap-24 lg:gap-[0px]
+        className={`container mx-auto flex flex-col-reverse md:flex-row-reverse gap-20 lg:gap-[0px]
        justify-center md:justify-around  items-center`}
       >
         {loading ? (
@@ -73,7 +73,7 @@ function Home() {
               animate={{
                 translateX: 0
               }}
-              className="img z-10 lg:w-[350px] lg:h-[450px] mx-3 md:mx-0 mb-10  min-w-[250px] h-[400px]  flex justify-center items-center"
+              className="img z-10 lg:w-[350px] lg:h-[450px] mx-3 md:mx-0 mb-10  min-w-[200px] h-[350px]  flex justify-center items-center"
             >
               <img
                 className="rounded-[20px] w-full h-full"
