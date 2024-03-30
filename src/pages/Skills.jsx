@@ -25,7 +25,7 @@ function Skills() {
       <div className='container flex flex-col py-14 items-center mx-auto'>
         <motion.h1 className='text-[deepskyblue] font-bold text-[70px] duration-1000 '
           initial={{
-            scale: 5
+            scale: 3
           }}
           whileInView={{
             scale: 1

@@ -10,3 +10,13 @@ html{
   width: 10px;
 }
 
+.upper-bg{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  top: -100px;
+  left: 0;
+  background-color: black;
+}
+

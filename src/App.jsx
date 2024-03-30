@@ -7,20 +7,20 @@ import Skills from "./pages/Skills";
 function App() {
   const [navOpen, setNavOpen] = useState(false)
 
-      useEffect(() => {
-       const handleResize = () => {
-         if (window.innerWidth >= 768) {
-           setNavOpen(false);
-         }
-       };
+    //   useEffect(() => {
+    //    const handleResize = () => {
+    //      if (window.innerWidth >= 768) {
+    //        setNavOpen(false);
+    //      }
+    //    };
    
-       window.addEventListener('resize', handleResize);
+    //    window.addEventListener('resize', handleResize);
    
-       return () => {
-         window.removeEventListener('resize', handleResize);
-       };
+    //    return () => {
+    //      window.removeEventListener('resize', handleResize);
+    //    };
 
-     }, []);
+    //  }, []);
 
      const [disableScroll, setDisableScroll] = useState(false);
 
@@ -51,8 +51,8 @@ function App() {
   return (
     <div className={`relative`}>
       <Navbar navOpen={navOpen} setNavOpen={setNavOpen}/>
-
-      <div className={`transition-all ease-linear  duration-100 ${navOpen ? 'blur' : ''}`}>
+      <div className={`transition-all ease-linear  duration-100 relative ${navOpen ? 'blur' : ''}`}>
+      <div className="upper-bg"></div>
       <Home navOpen={navOpen} setNavOpen={setNavOpen}/>
         <Skills />
       </div>
