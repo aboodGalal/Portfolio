@@ -4,35 +4,17 @@ import Links from '../links/Links';
 import { useEffect, useState, useRef } from 'react';
 
 function Navbar({ navOpen, setNavOpen }) {
-  const [scrollBackground, setScrollBackground] = useState(false);
+  // const [scrollBackground, setScrollBackground] = useState(false);
   const navbarRef = useRef(null);
 
-  useEffect(() => {
-    const handleScroll = ([entry]) => {
-      setScrollBackground(entry.isIntersecting);
-    };
-
-    const observerOptions = {
-      root: null, // Use the viewport as the root
-      threshold: 0.5, // Adjust the threshold as needed (e.g., 0.5 means 50% visibility)
-    };
-
-    const observer = new IntersectionObserver(handleScroll, observerOptions);
-
-    observer.observe(navbarRef.current);
-
-    return () => {
-      observer.unobserve(navbarRef.current);
-    };
-  }, []);
 
   return (
     <nav
       id='Home'
       ref={navbarRef}
-      className={`w-full bg-black transition-all ease-linear duration-500 ${
-        scrollBackground ? 'bg-opacity-50 backdrop-filter backdrop-blur sticky top-0  z-40' : ''
-      }`}
+      className={`w-full bg-black transition-all ease-linear duration-500 
+      bg-opacity-50 backdrop-filter backdrop-blur sticky top-0  z-40
+      `}
     >
       <motion.div
         initial={{

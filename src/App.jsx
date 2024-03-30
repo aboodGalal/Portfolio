@@ -5,23 +5,7 @@ import Navbar from "./components/navbar/Navbar";
 import Skills from "./pages/Skills";
 
 function App() {
-  const [navOpen, setNavOpen] = useState(false)
-
-    //   useEffect(() => {
-    //    const handleResize = () => {
-    //      if (window.innerWidth >= 768) {
-    //        setNavOpen(false);
-    //      }
-    //    };
-   
-    //    window.addEventListener('resize', handleResize);
-   
-    //    return () => {
-    //      window.removeEventListener('resize', handleResize);
-    //    };
-
-    //  }, []);
-
+    const [navOpen, setNavOpen] = useState(false)
      const [disableScroll, setDisableScroll] = useState(false);
 
      useEffect(() => {
@@ -44,7 +28,7 @@ function App() {
        setDisableScroll(true);
        setTimeout(() => {
          setDisableScroll(false);
-       }, 500); // Adjust the timeout duration as needed
+       }, 500); 
      }, []);
 
 
