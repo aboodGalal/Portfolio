@@ -73,7 +73,7 @@ function Home() {
               animate={{
                 translateX: 0
               }}
-              className="img z-10 lg:w-[350px] lg:h-[450px] mx-3 md:mx-0 mb-10  min-w-[200px] h-[350px]  flex justify-center items-center"
+              className="img lg:w-[350px] lg:h-[450px] mx-3 md:mx-0 mb-10  min-w-[200px] h-[350px]  flex justify-center items-center"
             >
               <img
                 className="rounded-[20px] w-full h-full"

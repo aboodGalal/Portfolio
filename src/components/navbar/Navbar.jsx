@@ -13,7 +13,7 @@ function Navbar({ navOpen, setNavOpen }) {
       id='Home'
       ref={navbarRef}
       className={`w-full bg-black transition-all ease-linear duration-500 
-      bg-opacity-50 backdrop-filter backdrop-blur sticky top-0  z-40
+      bg-opacity-50 backdrop-filter backdrop-blur sticky top-0  z-10
       `}
     >
       <motion.div

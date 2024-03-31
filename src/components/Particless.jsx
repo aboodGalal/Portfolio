@@ -61,13 +61,13 @@ function Particless() {
             links: {
                 color: "#00BFFF",
                 distance: 90,
-                enable: true,
+                enable: false,
                 opacity: 0.5,
                 width: 1,
             },
             move: {
                 direction: "none",
-                enable: true,
+                enable: false,
                 outModes: {
                     default: "bounce",
                 },
@@ -81,16 +81,16 @@ function Particless() {
                     enable: true,
                     area: 1000,
                 },
-                value: 50,
+                value: 100,
             },
             opacity: {
                 value: 0.5,
             },
             shape: {
-                type: "circle",
+                type: "star",
             },
             size: {
-                value: { min: 1, max: 6 },
+                value: { min: 1, max: 1 },
             },
         },
         detectRetina: true,

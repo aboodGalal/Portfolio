@@ -45,3 +45,23 @@ html{
   border-width: 15px 15px 15px 15px; */
 /* } */
 
+@media (min-width: 768px) {
+  .li::before {
+    display: none;
+  }
+}
+
+.li::before {
+  content: '';
+  position: absolute;
+  left: -50px;
+  top: 0px;
+  width: 0px;
+  height: 100%;
+  box-shadow: 3px 3px 16px 7px deepskyblue;
+  animation-duration: 0.1s !important;
+  background-color: transparent;
+}
+.active a{
+  color: deepskyblue;
+}
