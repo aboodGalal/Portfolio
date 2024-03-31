@@ -12,7 +12,7 @@ function Navbar({ navOpen, setNavOpen }) {
     <nav
       id='Home'
       ref={navbarRef}
-      className={`w-full bg-black transition-all ease-linear duration-500 
+      className={`w-full  transition-all ease-linear duration-500 
       bg-opacity-50 backdrop-filter backdrop-blur sticky top-0  z-10
       `}
     >
@@ -23,7 +23,7 @@ function Navbar({ navOpen, setNavOpen }) {
         animate={{
           translateY: 0,
         }}
-        className={`container bg-[#1f 1f1f] flex justify-between items-center px-2 py-5 mx-auto relative z-40`}
+        className={`container  flex justify-between items-center px-2 py-5 mx-auto relative z-40`}
       >
         <p className='my-0 mx-5 z-[400] text-[deepskyblue] text-[35px] font-bold'>
           <a href=''>Galal</a>
