@@ -1,8 +1,8 @@
-import Home from "./pages/Home";
+import Home from "./sections/Home";
 import './App.css'
 import { useEffect, useState } from "react";
 import Navbar from "./components/navbar/Navbar";
-import Skills from "./pages/Skills";
+import Skills from "./sections/Skills";
 
 function App() {
   const [navOpen, setNavOpen] = useState(false);

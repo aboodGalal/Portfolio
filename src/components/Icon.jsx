@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 function Icon({ icon }) {
     const [hoveredIcon, setHoveredIcon] = useState(false);
     return (
-        <motion.div className='w-[100px] h-fit relative'
+        <motion.div className='w-[100px] h-[120px] relative'
             initial={{
                 rotate: 0,
             }}

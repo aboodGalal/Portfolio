@@ -6,30 +6,21 @@ import '../links/Links.css'
 
 function Links({navOpen, setNavOpen}) {
   const links = ['Home', 'Skills', 'Portfolio', 'Contact me']
-  const [activeLink, setActiveLink] = useState(""); // Initialize activeLink state
-  // ... other code
 
 
-useEffect(() => {
-  const pathname = window.location.pathname; // Get current pathname
-  const linkMatch = links.find((link) => pathname.startsWith(`/${link}`)); // Find matching link
-  setActiveLink(linkMatch || ""); // Set activeLink if found, otherwise empty string
-}, [links, setActiveLink]); // Run effect when links or setActiveLink change
-
-// ... other code
-
-// const handleScroll = (linkOrId) => {
-//    // Set activeLink based on clicked link or section ID
-//   // ... other code
-// };
+// useEffect(() => {
+//   const pathname = window.location.pathname; 
+//   const linkMatch = links.find((link) => pathname.startsWith(`/${link}`)); 
+//   setActiveLink(linkMatch || ""); 
+// }, [links, setActiveLink]); 
 
 
 
-  const handleScroll = (link ,linkOrId) => {
-    setActiveLink(linkOrId) // Update activeLink state when a link is clicked
-    setNavOpen(false); // Close the navigation
+
+  const handleScroll = (link) => {
+    setNavOpen(false); 
     if (link === "Home") {
-      window.scrollTo(0, 0); // Scroll to the top of the page when "Home" link is clicked
+      window.scrollTo(0, 0);
     }
   };
   
@@ -48,7 +39,7 @@ useEffect(() => {
     key={link}
     className={`hover:md:translate-x-0 hover:translate-x-6 transition-all duration-500 ml-8 
       ${link === 'Contact me' ? 'border-b-[0px] ' : 'border-b-[1px]'} 
-      ${link === activeLink || link === window.location.hash.slice(1) ? 'active md:activeMd' : ''}  li md:border-b-[0px] border-gray-700`}
+        li md:border-b-[0px] border-gray-700`}
   >
     <a
       className={`py-4 mx-0 md:my-0 text-white text-lg block w-full h-full 
