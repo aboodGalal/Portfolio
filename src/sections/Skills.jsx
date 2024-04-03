@@ -23,7 +23,7 @@ function Skills() {
 
 
   return (
-    <div id='Skills' className='w-full sm:h-fit   lg:h-fit md:h-screen bg-[rgb(28,35,33)]'>
+    <section id='Skills' className='w-full sm:h-fit   lg:h-fit md:h-screen bg-[rgb(28,35,33)]'>
       <div className='container flex flex-col py-14 items-center mx-auto'>
         <motion.h1 className='text-[deepskyblue] font-bold text-[50px] md:text-[80px] duration-1000 '
           initial={{
@@ -48,7 +48,7 @@ function Skills() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

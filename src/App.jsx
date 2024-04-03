@@ -3,6 +3,7 @@ import './App.css'
 import { useEffect, useState } from "react";
 import Navbar from "./components/navbar/Navbar";
 import Skills from "./sections/Skills";
+import Portfolio from "./sections/Portfolio";
 
 function App() {
   const [navOpen, setNavOpen] = useState(false);
@@ -46,6 +47,7 @@ function App() {
         <div className={`upper-bg ${navOpen? 'bg-[#2c2c33] opacity-95':'bg-black opacity-100'}`}></div>
         <Home navOpen={navOpen} setNavOpen={setNavOpen} />
         <Skills />
+        <Portfolio />
       </div>
     </div>
   );

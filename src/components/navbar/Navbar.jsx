@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import Sidebar from '../sidebar/Sidebar';
 import Links from '../links/Links';
 import { useEffect, useState, useRef } from 'react';
+import imgCode from '../../assets/source-code.png'
 
 function Navbar({ navOpen, setNavOpen }) {
   // const [scrollBackground, setScrollBackground] = useState(false);
@@ -25,9 +26,11 @@ function Navbar({ navOpen, setNavOpen }) {
         }}
         className={`container  flex justify-between items-center px-2 py-5 mx-auto relative z-40`}
       >
-        <p className='my-0 mx-5 z-[400] text-[deepskyblue] text-[35px] font-bold'>
-          <a href=''>Galal</a>
-        </p>
+        <div className='my-0 mx-5 z-[400] text-[deepskyblue] text-[35px] font-bold
+         flex flex-row items-center gap-4'>
+          <a href=''>Galal </a>
+          <span className='w-[25px] overflow-hidden'><img className='pt-3' src={imgCode} alt="" /></span>
+        </div>
         <div
           className={`inline-flex justify-center items-center flex-col md:hidden gap-1
              cursor-pointer rounded-full bg-transparent absolute right-5 z-[400]`}
