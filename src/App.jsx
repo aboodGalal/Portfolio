@@ -41,7 +41,7 @@ function App() {
 
 
   return (
-    <div className={`relative overflow-hidden`}>
+    <div className={`relative`}>
       <div className={`${navOpen? 'absolute':'hidden'}  w-[1300px] h-[100%] top-0 left-0 bg-[#2c2c33] opacity-95 z-10`}></div>
 
       <Navbar navOpen={navOpen} setNavOpen={setNavOpen} />
