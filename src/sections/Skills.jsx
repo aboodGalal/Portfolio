@@ -34,7 +34,7 @@ function Skills() {
           }}
         >Tech Tapestry</motion.h1>
         <p className='text-[22px] md:text-[30px] text-white'>- Put our service to the test -</p>
-        <div className='flex flex-row-reverse gap-12 justify-center w-full '>
+        <div className='flex flex-row-reverse gap-12 justify-center items-center w-full '>
           <div className='hidden lg:flex'>
           <Lottie 
           style={{height: 355 ,width: 500}}

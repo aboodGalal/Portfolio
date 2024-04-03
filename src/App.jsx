@@ -1,6 +1,6 @@
 import Home from "./sections/Home";
 import './App.css'
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Navbar from "./components/navbar/Navbar";
 import Skills from "./sections/Skills";
 import Portfolio from "./sections/Portfolio";
@@ -18,6 +18,7 @@ function App() {
         window.scrollTo(0, 0);
       }
     };
+  
 
     handleScroll();
 
@@ -30,6 +31,7 @@ function App() {
     };
   }, [disableScroll]);
 
+
   useEffect(() => {
     setDisableScroll(true);
     setTimeout(() => {
@@ -39,8 +41,8 @@ function App() {
 
 
   return (
-    <div className={`relative`}>
-      <div className={`${navOpen? 'absolute':'hidden'}  w-[1300px] h-[150vh] top-0 left-0 bg-[#2c2c33] opacity-95 z-10`}></div>
+    <div className={`relative overflow-hidden`}>
+      <div className={`${navOpen? 'absolute':'hidden'}  w-[1300px] h-[100%] top-0 left-0 bg-[#2c2c33] opacity-95 z-10`}></div>
 
       <Navbar navOpen={navOpen} setNavOpen={setNavOpen} />
       <div className={`transition-all ease-linear  duration-100 relative ${navOpen ? '' : ''}`}>

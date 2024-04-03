@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import Projects from '../Projects'
 
 function Portfolio() {
+
+
     return (
         <section id='Portfolio' className='wifull h-fit'>
-            <div className='container flex flex-col py-14 items-center gap-10 mx-auto'>
-                <motion.h1 className='text-[deepskyblue] font-bold text-[50px] md:text-[80px] duration-1000 '
+            <div className='container flex flex-col py-14 items-center gap-24 mx-auto'>
+                <motion.h1 className='text-[deepskyblue] font-bold text-[50px] md:text-[80px]
+                 border-b-[5px] border-b-[#25262b] border-dashed py-2  px-10 duration-1000 '
                     initial={{
                         scale: 3
                     }}
@@ -14,11 +17,11 @@ function Portfolio() {
                         scale: 1
                     }}
                 >Portfolio</motion.h1>
-                <div className='flex flex-wrap gap-10 items-center justify-center'>
+                <div className='flex flex-row-reverse flex-wrap gap-10 items-center justify-center'>
                     {Projects.map((prj) => (
-                        <div key={prj.name} className='flex flex-col gap-4 flex-wrap '>
-                            <iframe className='w-[400px] h-[400px] border-solid border-2 border-[deepskyblue]
-                            rounded-[20px]' src={prj.link} ></iframe>
+                        <div key={prj.name} className='flex flex-col gap-4 px-5'>
+                            <iframe className='w-[330px]  h-[400px] overflow-x-hidden border-solid border-2 border-[deepskyblue]
+                            rounded-[20px] self-center' src={prj.link} title={prj.name}></iframe>
                             <h3 className='text-red-500 text-[20px] font-bold'>{prj.name}</h3>
                             <div className='flex flex-wrap gap-3'>
                                 {prj.tools.map((tool, index) => (

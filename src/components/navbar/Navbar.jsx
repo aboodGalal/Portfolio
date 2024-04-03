@@ -4,15 +4,37 @@ import Links from '../links/Links';
 import { useEffect, useState, useRef } from 'react';
 import imgCode from '../../assets/source-code.png'
 
+
 function Navbar({ navOpen, setNavOpen }) {
-  // const [scrollBackground, setScrollBackground] = useState(false);
-  const navbarRef = useRef(null);
+  const [scrollBackgroundColor, setScrollBackgroundColor] = useState('bg-white');
+  const debounce = (func, delay) => {
+    let timeout;
+    return (...args) => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => func.apply(this, args), delay);
+    };
+  };
+
+  useEffect(() => {
+    const handleScroll = debounce(() => {
+      if (window.scrollY > 1400 && !navOpen) {
+        setScrollBackgroundColor('bg-black');
+      } else {
+        setScrollBackgroundColor('bg-white');
+      }
+    }, 250);  // Debounce updates every 250ms
+  
+    window.addEventListener('scroll', handleScroll);
+  
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [navOpen]);
 
 
   return (
     <nav
       id='Home'
-      ref={navbarRef}
       className={`w-full  transition-all ease-linear duration-500 
       bg-opacity-50 backdrop-filter backdrop-blur sticky top-0  z-10
       `}
@@ -39,16 +61,16 @@ function Navbar({ navOpen, setNavOpen }) {
           <motion.div
             initial={{ rotate: '0deg', y: '0px' }}
             animate={{ rotate: `${navOpen ? '-45deg' : '0deg'}`, y: `${navOpen ? '3px' : '0px'}` }}
-            className={`w-[25px] h-[2px] bg-white`}
+            className={`w-[25px] h-[2px]  ${navOpen? 'bg-white': ''} ${scrollBackgroundColor}`}
           ></motion.div>
-          {navOpen ? null : <motion.div className={`w-[25px] h-[2px] bg-white`}></motion.div>}
+          {navOpen ? null : <motion.div  className={`w-[25px] h-[2px]  ${navOpen? 'bg-white': ''} ${scrollBackgroundColor}`}></motion.div>}
           <motion.div
             initial={{ rotate: '0deg', y: '0px' }}
             animate={{ rotate: `${navOpen ? '45deg' : '0deg'}`, y: `${navOpen ? '-3px' : '0px'}` }}
-            className={`w-[25px] h-[2px] bg-white`}
+            className={`w-[25px] h-[2px]  ${navOpen? 'bg-white': ''} ${scrollBackgroundColor}`}
           ></motion.div>
         </div>
-        <Links navOpen={navOpen} setNavOpen={setNavOpen} />
+        <Links navOpen={navOpen} setNavOpen={setNavOpen} debounce={debounce}/>
       </motion.div>
     </nav>
   );

@@ -1,19 +1,31 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../links/Links.css'
 
 
 
 
-function Links({navOpen, setNavOpen}) {
+function Links({navOpen, setNavOpen, debounce}) {
   const links = ['Home', 'Skills', 'Portfolio', 'Contact me']
+  const linkRef = useRef()
+  const [scrollColor, setScrollColor] = useState('bg-white');
 
 
-// useEffect(() => {
-//   const pathname = window.location.pathname; 
-//   const linkMatch = links.find((link) => pathname.startsWith(`/${link}`)); 
-//   setActiveLink(linkMatch || ""); 
-// }, [links, setActiveLink]); 
 
+  useEffect(() => {
+    const handleScroll = debounce(() => {
+      if (window.scrollY > 1240 && !navOpen && window.innerWidth > 768) {
+        setScrollColor('text-black');
+      } else {
+        setScrollColor('text-white');
+      }
+    }, 250);  // Debounce updates every 250ms
+  
+    window.addEventListener('scroll', handleScroll);
+  
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [navOpen]);
 
 
 
@@ -24,6 +36,16 @@ function Links({navOpen, setNavOpen}) {
     }
   };
   
+  // useEffect(() => {
+  //   window.addEventListener('scroll', () =>{
+  //       if(window.scrollY > 1400 && window.innerWidth > 768){
+  //         linkRef.current.style.color = 'black'
+  //       }
+  //       else{
+  //         linkRef.current.style.color = 'white'
+  //       }
+  //   })
+  // }, []);
 
 
   return (
@@ -38,14 +60,15 @@ function Links({navOpen, setNavOpen}) {
   <li
     key={link}
     className={`hover:md:translate-x-0 hover:translate-x-6 transition-all duration-500 ml-8 
-      ${link === 'Contact me' ? 'border-b-[0px] ' : 'border-b-[1px]'} 
-        li md:border-b-[0px] border-gray-700`}
-  >
+    ${link === 'Contact me' ? 'border-b-[0px] ' : 'border-b-[1px]'} 
+    li md:border-b-[0px] border-gray-700`}
+    >
     <a
       className={`py-4 mx-0 md:my-0 text-white text-lg block w-full h-full 
-        hover:text-[deepskyblue] transition-all duration-200 relative ${link}`}
+      hover:text-[deepskyblue] transition-all duration-200 relative ${scrollColor} ${link}`}
       href={`#${link}`}
       onClick={() => handleScroll(link)}
+      // ref={linkRef}
     >
       {link}
     </a>

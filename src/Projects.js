@@ -7,7 +7,7 @@ const Projects = [
     {
         name: 'Cart-App',
         link: 'https://cart-app-jet.vercel.app/',
-        tools: ['REACTJS', 'TAILWIND', 'REDUX']
+        tools: ['REACTJS', 'BOOTSTRAP', 'REDUX']
     },
     {
         name: 'Restoarant-App',
