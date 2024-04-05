@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Navbar from "./components/navbar/Navbar";
 import Skills from "./sections/Skills";
 import Portfolio from "./sections/Portfolio";
+import Contact from "./sections/Contact";
 
 function App() {
   const [navOpen, setNavOpen] = useState(false);
@@ -50,6 +51,7 @@ function App() {
         <Home navOpen={navOpen} setNavOpen={setNavOpen} />
         <Skills />
         <Portfolio />
+        <Contact />
       </div>
     </div>
   );

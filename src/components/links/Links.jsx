@@ -13,8 +13,9 @@ function Links({navOpen, setNavOpen, debounce}) {
 
   useEffect(() => {
     const handleScroll = debounce(() => {
-      if (window.scrollY > 1240  && window.innerWidth > 768) {
+      if (window.scrollY < 3900 && window.scrollY > 1240  && window.innerWidth > 768) {
         setScrollColor('text-black');
+        console.log(true)
       }
        else {
         setScrollColor('text-white');
@@ -27,7 +28,6 @@ function Links({navOpen, setNavOpen, debounce}) {
       window.removeEventListener('scroll', handleScroll);
     };
   }, [navOpen]);
-
 
 
   const handleScroll = (link) => {

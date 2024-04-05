@@ -6,10 +6,10 @@ function Portfolio() {
 
 
     return (
-        <section id='Portfolio' className='wifull h-fit overflow-hidden'>
+        <section id='Portfolio' className='w-full h-fit overflow-hidden'>
             <div className='container flex flex-col py-14 items-center gap-24 mx-auto'>
                 <motion.h1 className='text-[deepskyblue] font-bold text-[50px] md:text-[80px]
-                 border-b-[5px] border-b-[#25262b] border-dashed py-2  px-10 duration-1000 '
+                 duration-1000 '
                     initial={{
                         scale: 3
                     }}

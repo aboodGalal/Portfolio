@@ -17,7 +17,7 @@ function Navbar({ navOpen, setNavOpen }) {
 
   useEffect(() => {
     const handleScroll = debounce(() => {
-      if (window.scrollY > 1400 && !navOpen) {
+      if (window.scrollY < 6050 && window.scrollY > 1400  && !navOpen) {
         setScrollBackgroundColor('bg-black');
       } else {
         setScrollBackgroundColor('bg-white');
