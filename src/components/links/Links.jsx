@@ -4,30 +4,40 @@ import '../links/Links.css'
 
 
 
-function Links({navOpen, setNavOpen, debounce}) {
+function Links({navOpen, setNavOpen,debounce, portfolioScrollY ,contactScrollY}) {
   const links = ['Home', 'Skills', 'Portfolio', 'Contact me']
-  const linkRef = useRef()
   const [scrollColor, setScrollColor] = useState('text-white');
-
-
 
   useEffect(() => {
     const handleScroll = debounce(() => {
-      if (window.scrollY < 3900 && window.scrollY > 1240  && window.innerWidth > 768) {
+      if (portfolioScrollY === true && contactScrollY === false) {
         setScrollColor('text-black');
-        console.log(true)
-      }
-       else {
+      } else {
         setScrollColor('text-white');
       }
-    }, 250);  // Debounce updates every 250ms
+    }, 250); 
   
     window.addEventListener('scroll', handleScroll);
   
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [navOpen]);
+  }, [portfolioScrollY]);
+
+  
+  useEffect(() => {
+    const handleScroll = debounce(() => {
+      if (contactScrollY === true) {
+        setScrollColor('text-white');
+      } else{null}
+    }, 250); 
+  
+    window.addEventListener('scroll', handleScroll);
+  
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [contactScrollY]);
 
 
   const handleScroll = (link) => {
@@ -37,17 +47,6 @@ function Links({navOpen, setNavOpen, debounce}) {
     }
   };
   
-  // useEffect(() => {
-  //   window.addEventListener('scroll', () =>{
-  //       if(window.scrollY > 1400 && window.innerWidth > 768){
-  //         linkRef.current.style.color = 'black'
-  //       }
-  //       else{
-  //         linkRef.current.style.color = 'white'
-  //       }
-  //   })
-  // }, []);
-
 
   return (
     <ul
@@ -69,7 +68,6 @@ function Links({navOpen, setNavOpen, debounce}) {
       hover:text-[deepskyblue] transition-all duration-200 relative ${scrollColor} ${link}`}
       href={`#${link}`}
       onClick={() => handleScroll(link)}
-      // ref={linkRef}
     >
       {link}
     </a>

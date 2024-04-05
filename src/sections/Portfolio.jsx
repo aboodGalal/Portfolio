@@ -1,12 +1,36 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import Projects from '../Projects'
 
-function Portfolio() {
+function Portfolio({portfolioScrollY, setPortfolioScrollY}) {
+    const [scrollPosition, setScrollPosition] = useState({ x: 0, y: 0 });
+    const prtRef = useRef()
 
+    const getScrollPosition = () => {
+      const { top, left } = prtRef.current.getBoundingClientRect();
+      return { x: left, y: top };
+    };
+  
+    useEffect(() => {
+      const handleScroll = () => {
+        const position = getScrollPosition();
+        setScrollPosition(Math.trunc(position.y));
+        if(Math.trunc(position.y) < 1){
+            setPortfolioScrollY(true)
+        }else if(Math.trunc(position.y) > 1){
+            setPortfolioScrollY(false)
+        }
+      };
+  
+      window.addEventListener('scroll', handleScroll);
+  
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }, [scrollPosition]);
 
     return (
-        <section id='Portfolio' className='w-full h-fit overflow-hidden'>
+        <section ref={prtRef} id='Portfolio' className='w-full h-fit overflow-hidden'>
             <div className='container flex flex-col py-14 items-center gap-24 mx-auto'>
                 <motion.h1 className='text-[deepskyblue] font-bold text-[50px] md:text-[80px]
                  duration-1000 '

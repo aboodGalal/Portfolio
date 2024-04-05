@@ -1,6 +1,6 @@
 import Home from "./sections/Home";
 import './App.css'
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "./components/navbar/Navbar";
 import Skills from "./sections/Skills";
 import Portfolio from "./sections/Portfolio";
@@ -9,6 +9,9 @@ import Contact from "./sections/Contact";
 function App() {
   const [navOpen, setNavOpen] = useState(false);
   const [disableScroll, setDisableScroll] = useState(false);
+  const [portfolioScrollY, setPortfolioScrollY] = useState(false) 
+  const [contactScrollY, setContactScrollY] = useState(false) 
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,13 +48,14 @@ function App() {
     <div className={`relative`}>
       <div className={`${navOpen? 'absolute':'hidden'}  w-[1300px] h-[100%] top-0 left-0 bg-[#2c2c33] opacity-95 z-10`}></div>
 
-      <Navbar navOpen={navOpen} setNavOpen={setNavOpen} />
+      <Navbar navOpen={navOpen} setNavOpen={setNavOpen} portfolioScrollY={portfolioScrollY}
+       contactScrollY={contactScrollY}/>
       <div className={`transition-all ease-linear  duration-100 relative ${navOpen ? '' : ''}`}>
         <div className={`upper-bg ${navOpen? 'bg-[#2c2c33] opacity-95':'bg-black opacity-100'}`}></div>
         <Home navOpen={navOpen} setNavOpen={setNavOpen} />
         <Skills />
-        <Portfolio />
-        <Contact />
+        <Portfolio setPortfolioScrollY={setPortfolioScrollY}/>
+        <Contact setContactScrollY={setContactScrollY}/>
       </div>
     </div>
   );

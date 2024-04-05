@@ -1,11 +1,10 @@
 import { motion } from 'framer-motion';
-import Sidebar from '../sidebar/Sidebar';
 import Links from '../links/Links';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import imgCode from '../../assets/source-code.png'
 
 
-function Navbar({ navOpen, setNavOpen }) {
+function Navbar({ navOpen, setNavOpen, portfolioScrollY ,contactScrollY }) {
   const [scrollBackgroundColor, setScrollBackgroundColor] = useState('bg-white');
   const debounce = (func, delay) => {
     let timeout;
@@ -17,19 +16,34 @@ function Navbar({ navOpen, setNavOpen }) {
 
   useEffect(() => {
     const handleScroll = debounce(() => {
-      if (window.scrollY < 6050 && window.scrollY > 1400  && !navOpen) {
+      if (portfolioScrollY === true && contactScrollY === false) {
         setScrollBackgroundColor('bg-black');
       } else {
         setScrollBackgroundColor('bg-white');
       }
-    }, 250);  // Debounce updates every 250ms
+    }, 250);  
   
     window.addEventListener('scroll', handleScroll);
   
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [navOpen]);
+  }, [portfolioScrollY]);
+
+  
+  useEffect(() => {
+    const handleScroll = debounce(() => {
+      if (contactScrollY === true) {
+        setScrollBackgroundColor('bg-white');
+      } else{null}
+    }, 250); 
+  
+    window.addEventListener('scroll', handleScroll);
+  
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [contactScrollY]);
 
 
   return (
@@ -70,7 +84,8 @@ function Navbar({ navOpen, setNavOpen }) {
             className={`w-[25px] h-[2px]  ${navOpen? 'bg-white': ''} ${scrollBackgroundColor}`}
           ></motion.div>
         </div>
-        <Links navOpen={navOpen} setNavOpen={setNavOpen} debounce={debounce}/>
+        <Links navOpen={navOpen} setNavOpen={setNavOpen} portfolioScrollY={portfolioScrollY}
+        contactScrollY={contactScrollY} debounce={debounce}/>
       </motion.div>
     </nav>
   );
