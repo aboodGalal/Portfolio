@@ -1,8 +1,8 @@
 const Projects = [
     {
-        name: 'Admin-Dashboard',
-        link: 'https://admin-panel-dashboard-three.vercel.app/',
-        tools: ['REACTJS', 'FIREBASE', "TAILWIND", 'REDUX'],
+        name: 'Restoarant-App',
+        link: 'https://restaurant-azure-eta.vercel.app/',
+        tools: ['REACTJS', 'TAILWIND']
     },
     {
         name: 'Cart-App',
@@ -10,9 +10,9 @@ const Projects = [
         tools: ['REACTJS', 'BOOTSTRAP', 'REDUX']
     },
     {
-        name: 'Restoarant-App',
-        link: 'https://restaurant-azure-eta.vercel.app/',
-        tools: ['REACTJS', 'TAILWIND']
+        name: 'Admin-Dashboard',
+        link: 'https://admin-panel-dashboard-three.vercel.app/',
+        tools: ['REACTJS', 'FIREBASE', "TAILWIND", 'REDUX'],
     },
     {
         name: 'Simple-Dasboard',

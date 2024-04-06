@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../links/Links.css'
 
 
@@ -10,7 +10,7 @@ function Links({navOpen, setNavOpen,debounce, portfolioScrollY ,contactScrollY})
 
   useEffect(() => {
     const handleScroll = debounce(() => {
-      if (portfolioScrollY === true && contactScrollY === false) {
+      if (portfolioScrollY === true && contactScrollY === false && window.innerWidth >  786) {
         setScrollColor('text-black');
       } else {
         setScrollColor('text-white');
