@@ -61,6 +61,16 @@ html{
   animation-duration: 0.1s !important;
   background-color: transparent;
 }
+.a{
+  /* -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black; */
+  text-shadow: 2px 3px black;
+}
+.a:hover{
+  /* -webkit-text-stroke-color: deepskyblue; */
+  text-shadow: 2px 3px transparent;
+} 
+
 .active{
   transform: translateX(1.5rem);
   a{

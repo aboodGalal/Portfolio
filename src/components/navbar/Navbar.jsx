@@ -4,46 +4,46 @@ import { useEffect, useState } from 'react';
 import imgCode from '../../assets/source-code.png'
 
 
-function Navbar({ navOpen, setNavOpen, portfolioScrollY ,contactScrollY }) {
-  const [scrollBackgroundColor, setScrollBackgroundColor] = useState('bg-white');
-  const debounce = (func, delay) => {
-    let timeout;
-    return (...args) => {
-      clearTimeout(timeout);
-      timeout = setTimeout(() => func.apply(this, args), delay);
-    };
-  };
+function Navbar({ navOpen, setNavOpen }) {
+  // const [scrollBackgroundColor, setScrollBackgroundColor] = useState('bg-white');
+  // const debounce = (func, delay) => {
+  //   let timeout;
+  //   return (...args) => {
+  //     clearTimeout(timeout);
+  //     timeout = setTimeout(() => func.apply(this, args), delay);
+  //   };
+  // };
 
-  useEffect(() => {
-    const handleScroll = debounce(() => {
-      if (portfolioScrollY === true && contactScrollY === false) {
-        setScrollBackgroundColor('bg-black');
-      } else {
-        setScrollBackgroundColor('bg-white');
-      }
-    }, 250);  
+  // useEffect(() => {
+  //   const handleScroll = debounce(() => {
+  //     if (portfolioScrollY === true && contactScrollY === false) {
+  //       setScrollBackgroundColor('bg-black');
+  //     } else {
+  //       setScrollBackgroundColor('bg-white');
+  //     }
+  //   }, 250);  
   
-    window.addEventListener('scroll', handleScroll);
+  //   window.addEventListener('scroll', handleScroll);
   
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [portfolioScrollY]);
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, [portfolioScrollY]);
 
   
-  useEffect(() => {
-    const handleScroll = debounce(() => {
-      if (contactScrollY === true) {
-        setScrollBackgroundColor('bg-white');
-      } else{null}
-    }, 250); 
+  // useEffect(() => {
+  //   const handleScroll = debounce(() => {
+  //     if (contactScrollY === true) {
+  //       setScrollBackgroundColor('bg-white');
+  //     } else{null}
+  //   }, 250); 
   
-    window.addEventListener('scroll', handleScroll);
+  //   window.addEventListener('scroll', handleScroll);
   
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [contactScrollY]);
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, [contactScrollY]);
 
 
   return (
@@ -75,17 +75,17 @@ function Navbar({ navOpen, setNavOpen, portfolioScrollY ,contactScrollY }) {
           <motion.div
             initial={{ rotate: '0deg', y: '0px' }}
             animate={{ rotate: `${navOpen ? '-45deg' : '0deg'}`, y: `${navOpen ? '3px' : '0px'}` }}
-            className={`w-[25px] h-[2px]  ${navOpen? 'bg-white': ''} ${scrollBackgroundColor}`}
+            className={`w-[25px] h-[4px]  ${navOpen? 'bg-white': ''} bg-white border-solid border-[1px] border-black`}
           ></motion.div>
-          {navOpen ? null : <motion.div  className={`w-[25px] h-[2px]  ${navOpen? 'bg-white': ''} ${scrollBackgroundColor}`}></motion.div>}
+          {navOpen ? null : <motion.div  className={`w-[25px] h-[4px]  ${navOpen? 'bg-white': ''} 
+          bg-white border-solid border-[1px] border-black`}></motion.div>}
           <motion.div
             initial={{ rotate: '0deg', y: '0px' }}
-            animate={{ rotate: `${navOpen ? '45deg' : '0deg'}`, y: `${navOpen ? '-3px' : '0px'}` }}
-            className={`w-[25px] h-[2px]  ${navOpen? 'bg-white': ''} ${scrollBackgroundColor}`}
+            animate={{ rotate: `${navOpen ? '45deg' : '0deg'}`, y: `${navOpen ? '-5px' : '0px'}` }}
+            className={`w-[25px] h-[4px]  ${navOpen? 'bg-white': ''} bg-white border-solid border-[1px] border-black`}
           ></motion.div>
         </div>
-        <Links navOpen={navOpen} setNavOpen={setNavOpen} portfolioScrollY={portfolioScrollY}
-        contactScrollY={contactScrollY} debounce={debounce}/>
+        <Links navOpen={navOpen} setNavOpen={setNavOpen} />
       </motion.div>
     </nav>
   );

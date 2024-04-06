@@ -2,35 +2,35 @@ import React, { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import Projects from '../Projects'
 
-function Portfolio({portfolioScrollY, setPortfolioScrollY}) {
-    const [scrollPosition, setScrollPosition] = useState({ x: 0, y: 0 });
-    const prtRef = useRef()
+function Portfolio() {
+    // const [scrollPosition, setScrollPosition] = useState({ x: 0, y: 0 });
+    // const prtRef = useRef()
 
-    const getScrollPosition = () => {
-      const { top, left } = prtRef.current.getBoundingClientRect();
-      return { x: left, y: top };
-    };
+    // const getScrollPosition = () => {
+    //   const { top, left } = prtRef.current.getBoundingClientRect();
+    //   return { x: left, y: top };
+    // };
   
-    useEffect(() => {
-      const handleScroll = () => {
-        const position = getScrollPosition();
-        setScrollPosition(Math.trunc(position.y));
-        if(Math.trunc(position.y) < 1){
-            setPortfolioScrollY(true)
-        }else if(Math.trunc(position.y) > 1){
-            setPortfolioScrollY(false)
-        }
-      };
+    // useEffect(() => {
+    //   const handleScroll = () => {
+    //     const position = getScrollPosition();
+    //     setScrollPosition(Math.trunc(position.y));
+    //     if(Math.trunc(position.y) < 1){
+    //         setPortfolioScrollY(true)
+    //     }else if(Math.trunc(position.y) > 1){
+    //         setPortfolioScrollY(false)
+    //     }
+    //   };
   
-      window.addEventListener('scroll', handleScroll);
+    //   window.addEventListener('scroll', handleScroll);
   
-      return () => {
-        window.removeEventListener('scroll', handleScroll);
-      };
-    }, [scrollPosition]);
+    //   return () => {
+    //     window.removeEventListener('scroll', handleScroll);
+    //   };
+    // }, [scrollPosition]);
 
     return (
-        <section ref={prtRef} id='Portfolio' className='w-full h-fit overflow-hidden'>
+        <section id='Portfolio' className='w-full h-fit overflow-hidden'>
             <div className='container flex flex-col py-14 items-center gap-24 mx-auto'>
                 <motion.h1 className='text-[deepskyblue] font-bold text-[50px] md:text-[80px]
                  duration-1000 '
@@ -41,7 +41,7 @@ function Portfolio({portfolioScrollY, setPortfolioScrollY}) {
                         scale: 1
                     }}
                 >Portfolio</motion.h1>
-                <div className='grid grid-cols-1 grid-rows-9 md:grid-cols-2 md:grid-rows-5 lg:grid-cols-3 
+                <div className='grid grid-cols-1 grid-rows-7 md:grid-cols-2 md:grid-rows-4 lg:grid-cols-3 
                 lg:grid-rows-3 gap-y-10 gap-x-5'>
                     {Projects.map((prj) => (
                         <div key={prj.name} className='flex flex-col gap-4 px-5'>

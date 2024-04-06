@@ -4,40 +4,40 @@ import '../links/Links.css'
 
 
 
-function Links({navOpen, setNavOpen,debounce, portfolioScrollY ,contactScrollY}) {
+function Links({navOpen, setNavOpen}) {
   const links = ['Home', 'Skills', 'Portfolio', 'Contact me']
   const [scrollColor, setScrollColor] = useState('text-white');
 
-  useEffect(() => {
-    const handleScroll = debounce(() => {
-      if (portfolioScrollY === true && contactScrollY === false && window.innerWidth >  786) {
-        setScrollColor('text-black');
-      } else {
-        setScrollColor('text-white');
-      }
-    }, 250); 
+  // useEffect(() => {
+  //   const handleScroll = debounce(() => {
+  //     if (portfolioScrollY === true && contactScrollY === false && window.innerWidth >  786) {
+  //       setScrollColor('text-black');
+  //     } else {
+  //       setScrollColor('text-white');
+  //     }
+  //   }, 250); 
   
-    window.addEventListener('scroll', handleScroll);
+  //   window.addEventListener('scroll', handleScroll);
   
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [portfolioScrollY]);
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, [portfolioScrollY]);
 
   
-  useEffect(() => {
-    const handleScroll = debounce(() => {
-      if (contactScrollY === true) {
-        setScrollColor('text-white');
-      } else{null}
-    }, 250); 
+  // useEffect(() => {
+  //   const handleScroll = debounce(() => {
+  //     if (contactScrollY === true) {
+  //       setScrollColor('text-white');
+  //     } else{null}
+  //   }, 250); 
   
-    window.addEventListener('scroll', handleScroll);
+  //   window.addEventListener('scroll', handleScroll);
   
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [contactScrollY]);
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, [contactScrollY]);
 
 
   const handleScroll = (link) => {
@@ -56,7 +56,7 @@ function Links({navOpen, setNavOpen,debounce, portfolioScrollY ,contactScrollY})
        origin-center  sm:z-50 md:z-[400]
        transition-all ease-in duration-200 bg-[#14191b]  md:bg-transparent overflow-hidden rounded-lg`}
   >
-    {links.map((link, index) => (
+    {links.map((link) => (
   <li
     key={link}
     className={`hover:md:translate-x-0 hover:translate-x-6 transition-all duration-500 ml-8 
@@ -64,8 +64,8 @@ function Links({navOpen, setNavOpen,debounce, portfolioScrollY ,contactScrollY})
     li md:border-b-[0px] border-gray-700`}
     >
     <a
-      className={`py-4 mx-0 md:my-0 text-lg block w-full h-full 
-      hover:text-[deepskyblue] transition-all duration-200 relative ${scrollColor} ${link}`}
+      className={`py-4 mx-0 md:my-0 text-lg block w-full h-full a 
+      hover:text-[deepskyblue] transition-all duration-200 relative text-white ${link}`}
       href={`#${link}`}
       onClick={() => handleScroll(link)}
     >
