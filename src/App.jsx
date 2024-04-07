@@ -9,8 +9,6 @@ import Contact from "./sections/Contact";
 function App() {
   const [navOpen, setNavOpen] = useState(false);
   const [disableScroll, setDisableScroll] = useState(false);
-  // const [portfolioScrollY, setPortfolioScrollY] = useState(false) 
-  // const [contactScrollY, setContactScrollY] = useState(false) 
 
 
   useEffect(() => {
@@ -27,11 +25,11 @@ function App() {
     handleScroll();
 
     window.addEventListener('scroll', handleScroll);
-    window.addEventListener('resize', handleScroll); // Add resize event listener
+    window.addEventListener('resize', handleScroll); 
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleScroll); // Remove resize event listener
+      window.removeEventListener('resize', handleScroll); 
     };
   }, [disableScroll]);
 
@@ -48,9 +46,9 @@ function App() {
     <div className={`relative`}>
       <div className={`${navOpen? 'absolute':'hidden'}  w-[1300px] h-[600%] top-0 left-0 bg-[#2c2c33] opacity-95 z-10`}></div>
       <Navbar navOpen={navOpen} setNavOpen={setNavOpen} />
-      <div className={`transition-all ease-linear  duration-100 relative ${navOpen ? '' : ''}`}>
+      <div className={`transition-all ease-linear  duration-100 relative`}>
         <div className={`upper-bg ${navOpen? 'bg-[#2c2c33] opacity-95':'bg-black opacity-100'}`}></div>
-        <Home navOpen={navOpen} setNavOpen={setNavOpen} />
+        <Home />
         <Skills />
         <Portfolio />
         <Contact />

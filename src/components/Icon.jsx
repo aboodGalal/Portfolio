@@ -15,8 +15,8 @@ function Icon({ icon }) {
             onMouseLeave={() => setHoveredIcon(false)}>
             <span
                 className={`bg-gray-900 p-3 w-fit h-5 text-[12px] flex justify-center items-center 
-  flex-nowrap text-white absolute opacity-0 left-0 duration-100 ease-linear transition-all
-  ${hoveredIcon ? 'top-[-35px] left-[50%] -translate-x-1/2 opacity-100' : 'top-10'}`}
+                        flex-nowrap text-white absolute opacity-0 left-0 duration-100 ease-linear transition-all
+                        ${hoveredIcon ? 'top-[-35px] left-[50%] -translate-x-1/2 opacity-100' : 'top-10'}`}
                 style={{ whiteSpace: 'nowrap' }}>
                 {icon.name}
             </span>

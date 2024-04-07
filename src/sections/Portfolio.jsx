@@ -1,34 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React from 'react'
 import { motion } from 'framer-motion'
 import Projects from '../Projects'
 
 function Portfolio() {
-    // const [scrollPosition, setScrollPosition] = useState({ x: 0, y: 0 });
-    // const prtRef = useRef()
-
-    // const getScrollPosition = () => {
-    //   const { top, left } = prtRef.current.getBoundingClientRect();
-    //   return { x: left, y: top };
-    // };
-  
-    // useEffect(() => {
-    //   const handleScroll = () => {
-    //     const position = getScrollPosition();
-    //     setScrollPosition(Math.trunc(position.y));
-    //     if(Math.trunc(position.y) < 1){
-    //         setPortfolioScrollY(true)
-    //     }else if(Math.trunc(position.y) > 1){
-    //         setPortfolioScrollY(false)
-    //     }
-    //   };
-  
-    //   window.addEventListener('scroll', handleScroll);
-  
-    //   return () => {
-    //     window.removeEventListener('scroll', handleScroll);
-    //   };
-    // }, [scrollPosition]);
-
     return (
         <section id='Portfolio' className='w-full h-fit overflow-hidden'>
             <div className='container flex flex-col py-14 items-center gap-24 mx-auto'>
@@ -45,7 +19,7 @@ function Portfolio() {
                 lg:grid-rows-3 gap-y-10 gap-x-5'>
                     {Projects.map((prj) => (
                         <div key={prj.name} className='flex flex-col gap-4 px-5'>
-                            <iframe className='w-[330px]  h-[400px] overflow-x-hidden border-solid border-2 border-[deepskyblue]
+                            <iframe className='w-[330px] h-[400px] overflow-x-hidden border-solid border-2 border-[deepskyblue]
                             rounded-[20px] self-center' src={prj.link} title={prj.name}></iframe>
                             <h3 className='text-red-500 text-[20px] font-bold'>{prj.name}</h3>
                             <div className='flex flex-wrap gap-3'>

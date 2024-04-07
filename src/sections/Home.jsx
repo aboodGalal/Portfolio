@@ -8,16 +8,13 @@ import { motion } from 'framer-motion';
 import img from '../assets/Picsart_24-02-01_23-19-57-785.jpg'
 
 function Home() {
-
-
+  const [loading, setLoading] = useState(true);
 
   const [text] = useTypewriter({    
     words: ['React.JS Developer', 'Front-End Developer'],
     loop: Infinity,
     typeSpeed: 30,
   });
-
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -73,7 +70,7 @@ function Home() {
               animate={{
                 translateX: 0
               }}
-              className="img lg:w-[350px] lg:h-[450px] mx-3 md:mx-0 mb-10  min-w-[200px] h-[350px]  flex justify-center items-center"
+              className="img lg:w-[350px] lg:h-[450px] mx-3 md:mx-0 mb-10  min-w-[200px] h-[350px] flex justify-center items-center"
             >
               <img
                 className="rounded-[20px] w-full h-full"
@@ -88,7 +85,7 @@ function Home() {
               animate={{
                 translateX: 0
               }}
-             className="text-[white] md:self-start md:mt-10 flex flex-col justify-center items-center min-w-[330px] h-full md:justify-start md:items-start ">
+             className="text-[white] md:self-start md:mt-10 flex flex-col justify-center items-center min-w-[330px] h-full md:justify-start md:items-start">
               <p className="text-[18px] text-[deepskyblue] ml-2 md:ml-0 mb-1 pb-0 self-start">
                 Hi, my name is
               </p>
@@ -101,7 +98,7 @@ function Home() {
                 <Cursor cursorColor="#deepskyblue" />
               </h3>
               <div className="flex justify-center items-center gap-7 mt-10 text-[30px]" style={{perspective: '1000px'}}>
-                <motion.a href="" target="_blank" 
+                <motion.a href="https://www.facebook.com/abood.mohemadgalal" target="_blank" 
                 style={{perspective: '1000px'}}
                 whileHover={{translateZ: -50}} className="hover:text-[deepskyblue] transition-all ease-linear duration-100">
                   <FontAwesomeIcon icon={faFacebookF} />

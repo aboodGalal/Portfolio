@@ -36,15 +36,15 @@ function Skills() {
         <p className='text-[22px] md:text-[30px] text-white'>- Put our service to the test -</p>
         <div className='flex flex-row-reverse gap-12 justify-center items-center w-full '>
           <div className='hidden lg:flex'>
-          <Lottie 
-          style={{height: 355 ,width: 500}}
-          animationData={LaptopAnimation}>
-          </Lottie>
+            <Lottie
+              style={{ height: 355, width: 500 }}
+              animationData={LaptopAnimation}>
+            </Lottie>
           </div>
           <div className='flex gap-11 flex-wrap max-w-[600px] items-center justify-center mt-10 h-fit'>
             {Icons.map((icon) => (
               <Icon icon={icon} key={icon.name} />
-              ))}
+            ))}
           </div>
         </div>
       </div>

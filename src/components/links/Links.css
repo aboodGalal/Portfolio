@@ -1,0 +1,33 @@
+@media (min-width: 768px) {
+    .li::before {
+        display: none;
+    }
+}
+
+.li::before {
+    content: '';
+    position: absolute;
+    left: -50px;
+    top: 0px;
+    width: 0px;
+    height: 100%;
+    box-shadow: 3px 3px 16px 7px deepskyblue;
+    animation-duration: 0.1s !important;
+    background-color: transparent;
+}
+
+.a {
+    text-shadow: 2px 3px black;
+}
+
+.a:hover {
+    text-shadow: 2px 3px transparent;
+}
+
+.active {
+    transform: translateX(1.5rem);
+
+    a {
+        color: deepskyblue;
+    }
+}

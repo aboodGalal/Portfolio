@@ -1,16 +1,16 @@
-body{
-    /* height: 2000px; */
-    overflow-x: hidden;
+body {
+  overflow-x: hidden;
 }
-html{
-    scroll-behavior: smooth;
+
+html {
+  scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
   width: 10px;
 }
 
-.upper-bg{
+.upper-bg {
   content: '';
   position: absolute;
   width: 100%;
@@ -18,64 +18,3 @@ html{
   top: -100px;
   left: 0;
 }
-
-/* .img::after{
-  content: '';
-  position: absolute;
-  top: -50px;
-  left: -50px;
-  width: 100px;
-  height: 100px;
-  background-color: transparent;
-  border: solid ;
-  border-color: deepskyblue transparent transparent deepskyblue;
-  border-width: 15px 15px 15px 15px;
-}
-.img::before{
-  content: '';
-  position: absolute;
-  bottom: -50px;
-  right: -50px;
-  width: 100px;
-  height: 100px;
-  background-color: transparent;
-  border: solid ;
-  border-color:  transparent deepskyblue  deepskyblue transparent;
-  border-width: 15px 15px 15px 15px; */
-/* } */
-
-@media (min-width: 768px) {
-  .li::before {
-    display: none;
-  }
-}
-
-.li::before {
-  content: '';
-  position: absolute;
-  left: -50px;
-  top: 0px;
-  width: 0px;
-  height: 100%;
-  box-shadow: 3px 3px 16px 7px deepskyblue;
-  animation-duration: 0.1s !important;
-  background-color: transparent;
-}
-.a{
-  /* -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black; */
-  text-shadow: 2px 3px black;
-}
-.a:hover{
-  /* -webkit-text-stroke-color: deepskyblue; */
-  text-shadow: 2px 3px transparent;
-} 
-
-.active{
-  transform: translateX(1.5rem);
-  a{
-  color: deepskyblue;
-  }
-}
-
-

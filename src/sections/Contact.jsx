@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React from 'react'
 import { motion } from 'framer-motion'
 import Lottie from 'lottie-react';
 import messageAnimation from '../assets/Animation - 1712281222449.json'
@@ -7,36 +7,9 @@ import { useForm, ValidationError } from '@formspree/react';
 
 function Contact() {
     const [state, handleSubmit] = useForm("xeqypqvd");
-    // const [scrollPosition, setScrollPosition] = useState({ x: 0, y: 0 });
-    // const cntRef = useRef()
-
-
-    // const getScrollPosition = () => {
-    //     const { top, left } = cntRef.current.getBoundingClientRect();
-    //     return { x: left, y: top };
-    // };
-
-    // useEffect(() => {
-    //     const handleScroll = () => {
-    //         const position = getScrollPosition();
-    //         setScrollPosition(Math.trunc(position.y));
-    //         if (Math.trunc(position.y) < 1) {
-    //             setContactScrollY(true)
-    //         } else if (Math.trunc(position.y) > 1) {
-    //             setContactScrollY(false)
-    //         }
-    //     };
-
-    //     window.addEventListener('scroll', handleScroll);
-
-    //     return () => {
-    //         window.removeEventListener('scroll', handleScroll);
-    //     };
-    // }, [scrollPosition]);
-
 
     return (
-        <section  id='Contact me' className='w-full h-fit overflow-hidden bg-[#18181b]'>
+        <section id='Contact me' className='w-full h-fit overflow-hidden bg-[#18181b]'>
             <div className='flex flex-col py-14 items-center gap-16 mx-auto'>
                 <motion.h1 className='text-[deepskyblue] font-bold text-[50px] md:text-[80px]
                  duration-1000 '
