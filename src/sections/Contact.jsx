@@ -5,7 +5,7 @@ import messageAnimation from '../assets/Animation - 1712281222449.json'
 import doneAnimation from '../assets/Animation - 1712430828229.json'
 import { useForm, ValidationError } from '@formspree/react';
 
-function Contact({ setContactScrollY }) {
+function Contact() {
     const [state, handleSubmit] = useForm("xeqypqvd");
     // const [scrollPosition, setScrollPosition] = useState({ x: 0, y: 0 });
     // const cntRef = useRef()

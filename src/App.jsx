@@ -46,7 +46,7 @@ function App() {
 
   return (
     <div className={`relative`}>
-      <div className={`${navOpen? 'absolute':'hidden'}  w-[1300px] h-[100%] top-0 left-0 bg-[#2c2c33] opacity-95 z-10`}></div>
+      <div className={`${navOpen? 'absolute':'hidden'}  w-[1300px] h-[600%] top-0 left-0 bg-[#2c2c33] opacity-95 z-10`}></div>
       <Navbar navOpen={navOpen} setNavOpen={setNavOpen} />
       <div className={`transition-all ease-linear  duration-100 relative ${navOpen ? '' : ''}`}>
         <div className={`upper-bg ${navOpen? 'bg-[#2c2c33] opacity-95':'bg-black opacity-100'}`}></div>

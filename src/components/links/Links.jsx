@@ -6,7 +6,7 @@ import '../links/Links.css'
 
 function Links({navOpen, setNavOpen}) {
   const links = ['Home', 'Skills', 'Portfolio', 'Contact me']
-  const [scrollColor, setScrollColor] = useState('text-white');
+  // const [scrollColor, setScrollColor] = useState('text-white');
 
   // useEffect(() => {
   //   const handleScroll = debounce(() => {
