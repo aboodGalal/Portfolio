@@ -28,7 +28,8 @@ function Contact() {
                             <input className='bg-[#18181b] border-[1px] border-solid border-[#3f3f46]
                              hover:border-[deepskyblue] focus:border-white px-2 py-3
                              rounded-lg transition-all duration-300' required
-                                type="email" name='email' id='email' placeholder='Your email' />
+                                type="email" name='email' id='email' 
+                                placeholder='Your email' autoComplete="email"/>
                             <ValidationError
                                 prefix="Email"
                                 field="email"
@@ -43,6 +44,7 @@ function Contact() {
                                 required
                                 name="message"
                                 id="message"
+                                autoComplete="off"
                                 defaultValue="Your message"
                             ></textarea>
                             <ValidationError

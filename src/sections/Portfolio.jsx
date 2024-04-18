@@ -15,8 +15,8 @@ function Portfolio() {
                         scale: 1
                     }}
                 >Portfolio</motion.h1>
-                <div className='grid grid-cols-1 grid-rows-7 md:grid-cols-2 md:grid-rows-4 lg:grid-cols-3 
-                lg:grid-rows-3 gap-y-10 gap-x-5'>
+                <div className='grid grid-cols-1 grid-rows-flow md:grid-cols-2  lg:grid-cols-3 
+                  gap-y-10 gap-x-5'>
                     {Projects.map((prj) => (
                         <div key={prj.name} className='flex flex-col gap-4 px-5'>
                             <iframe className='w-[330px] h-[400px] overflow-x-hidden border-solid border-2 border-[deepskyblue]

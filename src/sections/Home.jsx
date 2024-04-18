@@ -26,7 +26,7 @@ function Home() {
   
 
   return (
-    <section className={`bg-black w-full md:h-[90vh] pt-7 relative`}>
+    <section className={`bg-black w-full md:h-fit pt-7 relative`}>
       <div className="w-[120%] h-[100%] absolute top-[-50px] left-[-100px] right-[-100px]">
         <Particless />
       </div>
