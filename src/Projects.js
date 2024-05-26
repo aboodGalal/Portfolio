@@ -10,10 +10,15 @@ const Projects = [
         tools: ['REACTJS', 'TAILWIND']
     },
     {
-        name: 'Cart-App',
-        link: 'https://cart-app-jet.vercel.app/',
-        tools: ['REACTJS', 'BOOTSTRAP', 'REDUX']
+        name: 'Food-App',
+        link: 'https://food-app-gilt-five.vercel.app/',
+        tools: ['REACTJS', 'BOOTSTRAP', 'REDUX', 'FIREBASE']
     },
+    // {
+    //     name: 'Cart-App',
+    //     link: 'https://cart-app-jet.vercel.app/',
+    //     tools: ['REACTJS', 'BOOTSTRAP', 'REDUX']
+    // },
     // {
     //     name: 'Simple-Dasboard',
     //     link: 'https://simple-dashboard-seven.vercel.app/',
