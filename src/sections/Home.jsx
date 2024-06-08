@@ -1,9 +1,6 @@
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
 import Particless from '../components/Particless';
 import React, { useEffect, useState } from 'react';
-import { faFacebookF, faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCamera } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
 import img from '../assets/Picsart_24-02-01_23-19-57-785.jpg'
 
@@ -44,7 +41,7 @@ function Home() {
               }}
               className="bg-gray-800 opacity-70 animate-pulse z-10 lg:w-[250px] lg:h-[250px] mx-3 md:mx-0 mb-10  min-w-[250px] h-[400px]  flex justify-center items-center"
             >
-              <span className='text-[40px] opacity-25'><FontAwesomeIcon icon={faCamera} /></span>
+              <span className='icon-camera w-[40px] h-[40px] text-white text-[40px] opacity-25'></span>
             </div>
             <div className="text-[white] md:self-start md:mt-10 flex flex-col justify-center items-center min-w-[330px] h-full md:justify-start md:items-start ">
               <span className='w-[300px] h-5 bg-gray-800 animate-pulse my-3 opacity-70'></span>
@@ -93,26 +90,30 @@ function Home() {
                 <h2>Abdelrahman</h2>
                 <h2 className="translate-y-[-25px] lg:translate-y-[0px]">Galal</h2>
               </div>
-              <h3 className="text-[30px] md:text-[35px] mt-0 mb-7 lg:mt-7 h-[20px] text-[deepskyblue]">
+              <h3 className="text-[30px] md:text-[35px] mt-0 mb-1 lg:mt-1 h-[20px] text-[deepskyblue]">
                 {text}
                 <Cursor cursorColor="#deepskyblue" />
               </h3>
-              <div className="flex justify-center items-center gap-7 mt-10 text-[30px]" style={{perspective: '1000px'}}>
+              <div className={`w-full flex flex-col justify-between items-center lg:items-start 
+              md:flex-row-reverse lg:flex-col`}>
+              <a href="https://drive.google.com/file/d/1erBWKc2OH9oHV_46Y05K0qlXKrEV6vnf/view" target="_blank" 
+              className={`text-white my-12 px-3 py-1 text-[18px] md:text-[25px] border-x-[1px] rounded-md
+              hover:bg- [deepskyblue] hover:text- black hover:border-[deepskyblue] hover:shadow-lg hover:shadow-[deepskyblue] 
+              shadow-md shadow-[deepskyblue] transition-all duration-150 w-fit`}>View CV</a>
+              <div className="flex justify-center items-center gap-7 text-[30px]" style={{perspective: '1000px'}}>
                 <motion.a href="https://www.facebook.com/abood.mohemadgalal" target="_blank" 
                 style={{perspective: '1000px'}}
-                whileHover={{translateZ: -50}} className="hover:text-[deepskyblue] transition-all ease-linear duration-100">
-                  <FontAwesomeIcon icon={faFacebookF} />
+                whileHover={{translateZ: -50}} className="icon-facebook w-7 h-7 hover:text-[deepskyblue] transition-all ease-linear duration-100">
                 </motion.a>
                 <motion.a href="https://github.com/aboodGalal" target="_blank"
                 style={{perspective: '1000px'}}
-                whileHover={{translateZ: -50}}  className="hover:text-[deepskyblue] transition-all ease-linear duration-100">
-                  <FontAwesomeIcon icon={faGithub} />
+                whileHover={{translateZ: -50}}  className="icon-github w-7 h-7 hover:text-[deepskyblue] transition-all ease-linear duration-100">
                 </motion.a>
                 <motion.a href="https://www.linkedin.com/in/abood-galal-6a0229278/" target="_blank"
                  style={{perspective: '1000px'}}
-                 whileHover={{translateZ: -50}}  className="hover:text-[deepskyblue] transition-all ease-linear duration-100">
-                  <FontAwesomeIcon icon={faLinkedinIn} />
+                 whileHover={{translateZ: -50}}  className="icon-linkedin w-7 h-7  hover:text-[deepskyblue] transition-all ease-linear duration-100">
                 </motion.a>
+              </div>
               </div>
             </motion.div>
           </>
