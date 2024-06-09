@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import img from '../assets/Picsart_24-02-01_23-19-57-785.jpg'
 import SkeltonLoader from '../components/SkeltonLoader';
-import MenuBar from '../components/menuBar';
+import MenuBar from '../components/MenuBar';
 
 
 function Home() {

@@ -20,7 +20,7 @@ function Skills() {
   { link: tailwind, name: 'tailwind' },
   { link: framer_motion, name: 'farmer motion' },
   { link: redux_icon, name: 'redux-toolkit' },
-  { link: firebase, name: 'firebase' },,]
+  { link: firebase, name: 'firebase' }]
 
 
 
