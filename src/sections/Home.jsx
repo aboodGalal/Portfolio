@@ -78,7 +78,7 @@ function Home() {
               </h3>
               <div className={`w-full flex flex-col justify-between items-center lg:items-start 
                 md:flex-row-reverse lg:flex-col`}>
-                <a href="https://drive.google.com/file/d/1erBWKc2OH9oHV_46Y05K0qlXKrEV6vnf/view" target="_blank"
+                <a href="https://drive.google.com/file/d/1erBWKc2OH9oHV_46Y05K0qlXKrEV6vnf/view?usp=sharing" target="_blank"
                   className={`text-white my-12 px-3 py-1 text-[18px] md:text-[25px] border-x-[1px] rounded-md
                   hover:bg- [deepskyblue] hover:text- black hover:border-[deepskyblue] hover:shadow-lg hover:shadow-[deepskyblue] 
                   shadow-md shadow-[deepskyblue] transition-all duration-150 w-fit`}>View CV</a>
