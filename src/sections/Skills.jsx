@@ -10,6 +10,7 @@ import framer_motion from '../assets/framer-motion.svg'
 import redux_icon from '../assets/redux-icon.webp'
 import Lottie from 'lottie-react';
 import LaptopAnimation from '../assets/Animation - 1711992329415.json'
+import firebase from '../assets/2944871.webp'
 
 function Skills() {
   const Icons = [{ link: html, name: 'html', },
@@ -18,7 +19,8 @@ function Skills() {
   { link: js, name: 'javascript' },
   { link: tailwind, name: 'tailwind' },
   { link: framer_motion, name: 'farmer motion' },
-  { link: redux_icon, name: 'redux-toolkit' }]
+  { link: redux_icon, name: 'redux-toolkit' },
+  { link: firebase, name: 'firebase' },,]
 
 
 
@@ -32,7 +34,7 @@ function Skills() {
           whileInView={{
             scale: 1
           }}
-        >Tech Tapestry</motion.h1>
+        >Tech Skills</motion.h1>
         <p className='text-[22px] md:text-[30px] text-white'>- Put our service to the test -</p>
         <div className='flex flex-row-reverse gap-12 justify-center items-center w-full '>
           <div className='hidden lg:flex'>

@@ -3,11 +3,14 @@ import Particless from '../components/Particless';
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import img from '../assets/Picsart_24-02-01_23-19-57-785.jpg'
+import SkeltonLoader from '../components/SkeltonLoader';
+import MenuBar from '../components/menuBar';
+
 
 function Home() {
   const [loading, setLoading] = useState(true);
 
-  const [text] = useTypewriter({    
+  const [text] = useTypewriter({
     words: ['React.JS Developer', 'Front-End Developer'],
     loop: Infinity,
     typeSpeed: 30,
@@ -20,7 +23,7 @@ function Home() {
 
     return () => clearTimeout(timer);
   }, []);
-  
+
 
   return (
     <section className={`bg-black w-full md:h-fit pt-7 relative`}>
@@ -32,28 +35,7 @@ function Home() {
        justify-center md:justify-around  items-center`}
       >
         {loading ? (
-          <div className="skeleton-loader container mx-auto flex flex-col-reverse md:flex-row-reverse gap-24 lg:gap-[0px]
-          justify-center md:justify-around  items-center animate-pulse opacity-30">
-            <div
-              style={{
-                borderRadius: '20px',
-                boxShadow: '5px 5px 20px 0px  rgba(128, 128, 128, 0.5)',
-              }}
-              className="bg-gray-800 opacity-70 animate-pulse z-10 lg:w-[250px] lg:h-[250px] mx-3 md:mx-0 mb-10  min-w-[250px] h-[400px]  flex justify-center items-center"
-            >
-              <span className='icon-camera w-[40px] h-[40px] text-white text-[40px] opacity-25'></span>
-            </div>
-            <div className="text-[white] md:self-start md:mt-10 flex flex-col justify-center items-center min-w-[330px] h-full md:justify-start md:items-start ">
-              <span className='w-[300px] h-5 bg-gray-800 animate-pulse my-3 opacity-70'></span>
-              <span className='w-[500px] h-10 bg-gray-800 animate-pulse my-3 opacity-70'></span>
-              <span className='w-[350px] h-2 bg-gray-800 animate-pulse my-3 opacity-70'></span>
-              <span className='w-[300px] h-5 bg-gray-800 animate-pulse my-3 opacity-70'></span>
-              <span className='w-[300px] h-5 bg-gray-800 animate-pulse my-3 opacity-70'></span>
-              <span className='w-[500px] h-10 bg-gray-800 animate-pulse my-3 opacity-70'></span>
-              <span className='w-[350px] h-2 bg-gray-800 animate-pulse my-3 opacity-70'></span>
-              <span className='w-[300px] h-5 bg-gray-800 animate-pulse my-3 opacity-70'></span>
-            </div>
-          </div>
+          <SkeltonLoader />
         ) : (
           <>
             <motion.div
@@ -75,14 +57,14 @@ function Home() {
                 alt=""
               />
             </motion.div>
-            <motion.div         
+            <motion.div
               initial={{
                 translateX: '-100%'
               }}
               animate={{
                 translateX: 0
               }}
-             className="text-[white] md:self-start md:mt-10 flex flex-col justify-center items-center min-w-[330px] h-full md:justify-start md:items-start">
+              className="text-[white] md:self-start md:mt-10 flex flex-col justify-center items-center min-w-[330px] h-full md:justify-start md:items-start">
               <p className="text-[18px] text-[deepskyblue] ml-2 md:ml-0 mb-1 pb-0 self-start">
                 Hi, my name is
               </p>
@@ -95,25 +77,12 @@ function Home() {
                 <Cursor cursorColor="#deepskyblue" />
               </h3>
               <div className={`w-full flex flex-col justify-between items-center lg:items-start 
-              md:flex-row-reverse lg:flex-col`}>
-              <a href="https://drive.google.com/file/d/1erBWKc2OH9oHV_46Y05K0qlXKrEV6vnf/view" target="_blank" 
-              className={`text-white my-12 px-3 py-1 text-[18px] md:text-[25px] border-x-[1px] rounded-md
-              hover:bg- [deepskyblue] hover:text- black hover:border-[deepskyblue] hover:shadow-lg hover:shadow-[deepskyblue] 
-              shadow-md shadow-[deepskyblue] transition-all duration-150 w-fit`}>View CV</a>
-              <div className="flex justify-center items-center gap-7 text-[30px]" style={{perspective: '1000px'}}>
-                <motion.a href="https://www.facebook.com/abood.mohemadgalal" target="_blank" 
-                style={{perspective: '1000px'}}
-                whileHover={{translateZ: -50}} className="icon-facebook w-7 h-7 hover:text-[deepskyblue] transition-all ease-linear duration-100">
-                </motion.a>
-                <motion.a href="https://github.com/aboodGalal" target="_blank"
-                style={{perspective: '1000px'}}
-                whileHover={{translateZ: -50}}  className="icon-github w-7 h-7 hover:text-[deepskyblue] transition-all ease-linear duration-100">
-                </motion.a>
-                <motion.a href="https://www.linkedin.com/in/abood-galal-6a0229278/" target="_blank"
-                 style={{perspective: '1000px'}}
-                 whileHover={{translateZ: -50}}  className="icon-linkedin w-7 h-7  hover:text-[deepskyblue] transition-all ease-linear duration-100">
-                </motion.a>
-              </div>
+                md:flex-row-reverse lg:flex-col`}>
+                <a href="https://drive.google.com/file/d/1erBWKc2OH9oHV_46Y05K0qlXKrEV6vnf/view" target="_blank"
+                  className={`text-white my-12 px-3 py-1 text-[18px] md:text-[25px] border-x-[1px] rounded-md
+                  hover:bg- [deepskyblue] hover:text- black hover:border-[deepskyblue] hover:shadow-lg hover:shadow-[deepskyblue] 
+                  shadow-md shadow-[deepskyblue] transition-all duration-150 w-fit`}>View CV</a>
+                <MenuBar />
               </div>
             </motion.div>
           </>

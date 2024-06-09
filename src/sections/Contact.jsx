@@ -24,7 +24,7 @@ function Contact() {
                     <form action="" onSubmit={handleSubmit} className='flex flex-col justify-center items-center
                      gap-5 text-[#a0a0a9] w-full md:w-[50%] px-2'>
                         <div className='flex flex-col gap-4 w-full'>
-                            <label htmlFor="email">Email Adress</label>
+                            <label htmlFor="email">Email Address</label>
                             <input className='bg-[#18181b] border-[1px] border-solid border-[#3f3f46]
                              hover:border-[deepskyblue] focus:border-white px-2 py-3
                              rounded-lg transition-all duration-300' required
@@ -55,7 +55,8 @@ function Contact() {
                         </div>
                         <button className='w-[40%] md:w-full flex justify-center items-center text-white text-[17px]
                         bg-[#18181b] border-[1px] border-solid border-[#3f3f46] py-4 rounded-lg 
-                         disabled:opacity-80 disabled:cursor-not-allowed'
+                         disabled:opacity-80 disabled:cursor-not-allowed hover:text-[deepskyblue] transition-colors
+                         duration-100'
                             type="submit" disabled={state.submitting}>
                             {state.disabled ? "submitting..." : "submit"}
                         </button>
